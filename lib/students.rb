@@ -9,32 +9,19 @@ def lowest_student_gpa
 end
 
 def average_student_gpa
-  "SELECT AVG(gpa) "
+  "SELECT AVG(gpa) FROM memory;"
 end
 
 def total_tardies_for_all_students
+  "SELECT TOTAL(tardies) FROM memory;"
 end
 
 def average_gpa_for_9th_grade
+  "SELECT AVG(gpa) FOR"
 end
 
 
 
-  describe "#highest_student_gpa" do
-    it 'finds the highest gpa' do
-      expect(@db.execute(highest_student_gpa)).to eq([[4.0]])
-    end
-  end
-  describe "#lowest_student_gpa" do
-    it 'finds the lowest gpa' do
-      expect(@db.execute(lowest_student_gpa)).to eq([[1.9]])
-    end
-  end
-  describe "#average_student_gpa" do
-    it 'finds the average gpa' do
-      expect(@db.execute(average_student_gpa)).to eq([[2.95]])
-    end
-  end
   describe "#total_tardies_for_all_students" do
     it 'finds the total amount of tardies for all students' do
       expect(@db.execute(total_tardies_for_all_students)).to eq([[49]])
