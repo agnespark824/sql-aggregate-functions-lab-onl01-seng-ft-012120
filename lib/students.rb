@@ -17,20 +17,6 @@ def total_tardies_for_all_students
 end
 
 def average_gpa_for_9th_grade
-  "SELECT AVG(gpa) FROM memory WHERE grade=11;"
+  "SELECT AVG(gpa) FROM memory WHERE grade = 11;"
 end
 
-
-
-  describe "#total_tardies_for_all_students" do
-    it 'finds the total amount of tardies for all students' do
-      expect(@db.execute(total_tardies_for_all_students)).to eq([[49]])
-    end
-  end
-  describe "#average_gpa_for_9th_grade" do
-    it 'find the average gpa for 9th grade' do
-      expect(@db.execute(average_gpa_for_9th_grade).first.first).to be_within(0.0001).of(3.3)
-    end
-  end
-
-end
