@@ -1,13 +1,15 @@
 ## Code your solution below. Note that your SQL queries should be in quotation marks. 
 
 def highest_student_gpa
-  "SELECT MAX(gpa) FROM "
+  "SELECT MAX(gpa) FROM memory;"
 end
 
 def lowest_student_gpa
+  "SELECT MIN(gpa) FROM memory;"
 end
 
 def average_student_gpa
+  "SELECT AVG(gpa) "
 end
 
 def total_tardies_for_all_students
@@ -17,16 +19,6 @@ def average_gpa_for_9th_grade
 end
 
 
-
-
-describe "aggregate functions sql" do
-  before do
-    @db = SQLite3::Database.new(':memory:')
-    SQLRunner.make_methods
-    @sql_runner = SQLRunner.new(@db)
-    @sql_runner.execute_sql_create
-    @sql_runner.execute_sql_insert
-  end
 
   describe "#highest_student_gpa" do
     it 'finds the highest gpa' do
